@@ -15,7 +15,9 @@ body {
 a {
   background-color: lightgray;
   border-radius: 5px;
+  border: 1px gray solid;
   margin: 10px;
+  padding: 1px;
 }
 
 /* label {
@@ -25,7 +27,7 @@ a {
 
 .page {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .centered-box {
