@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color:darkcyan;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/* label {
+  background-color: red;
+  color: white;
+} */
+
+.page {
+  display: flex;
+  justify-content: space-around;
+}
+
+.centered-box {
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding: 10px;
+}

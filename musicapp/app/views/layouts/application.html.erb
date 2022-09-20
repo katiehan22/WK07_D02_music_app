@@ -10,17 +10,22 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <h1>Hello <%= current_user.email %></h1>
-      <form action="<%= session_url %>" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="delete">gfhgfgh
-        <input type="submit" value="Logout">
-      </form>
-    <% else %>
-      <a href="<%= new_session_url %>">Sign in</a> 
-      <a href="<%= new_user_url %>">Sign up</a> 
-    <% end %>
+    <nav class="main-nav">
+      <h1 class="logo">Music App</h1>
+      <div>
+        <% if logged_in? %>
+          <p>Logged in as <%= current_user.email %></p>
+          <form action="<%= session_url %>" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+          </form>
+        <% else %>
+          <a href="<%= new_session_url %>">Sign in</a> 
+          <a href="<%= new_user_url %>">Sign up</a> 
+        <% end %>
+      </div>
+    </nav>
 
     <% if flash[:errors] %>
       <ul>
