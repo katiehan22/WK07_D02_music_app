@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_logged_out 
+  before_action :require_logged_out, only: [:create, :new] 
 
   def new
     @user = User.new
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login!(@user)
+      # render :show
       redirect_to user_url(@user)
     else
       flash.now[:errors] = @user.errors.full_messages
@@ -24,6 +25,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:email, :password)
   end
 end

@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_out
-    redirect_to users_url if logged_in?
+    redirect_to user_url(current_user) if logged_in?
   end
 end
